@@ -1,5 +1,5 @@
 # youtube-backup<sub>(chrome+firefox)</sub>
-youtube-backup is a Javascipt tool to backup youtube video links and descriptions. 
+youtube-backup is a Javascipt tool to backup youtube video links, titles and descriptions. 
 
 ### How to use
 1. Open the [videos page](https://www.youtube.com/user/<USER>/videos) of an Youtube channel.
