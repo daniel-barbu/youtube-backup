@@ -5,19 +5,20 @@ function scrollToLastVideo(){
 
 var str="";
 function getLinks() {
-	var noVideos=document.getElementsByTagName("ytd-grid-video-renderer").length, x=noVideos-1, i=1;
+	var noVideos=document.getElementsByTagName("ytd-grid-video-renderer").length, x=noVideos-1, i=1, dly=5;
 	var iFrame=document.createElement("iframe"); iFrame.id="iFrame"; document.body.appendChild(iFrame);
 	iFrame.src=document.getElementsByTagName("ytd-grid-video-renderer")[x].childNodes[1].childNodes[0].childNodes[2].href;
 	function getTitlesAndDescriptions() {
+		console.log("Finished video "+i+"/"+noVideos+". "+((noVideos-i)*dly/60).toFixed(0)+"min"+(((noVideos-i)*dly)-(((noVideos-i)*dly/60).toFixed(0))*60).toFixed(0)+"sec left");
 		str+="xxxxxxxxxxxxxxxxxxxxxxxxxxxxx"; for(var y=i.toString().length; y<noVideos.toString().length; y++) {str+="0"}; str+=i+"xxxxxxxxxxxxxxxxxxxxxxxxxxxxx|<br>"+
 		document.getElementById("iFrame").contentWindow.document.getElementsByTagName("h1")[0].textContent+"<br>"+
 		document.getElementById("iFrame").contentWindow.document.getElementsByClassName("view-count")[0].textContent+document.getElementById("iFrame").contentWindow.document.getElementById("date").textContent+"<br>"+
 		"----------------------------------------<br>"+
-		document.getElementById("iFrame").contentWindow.document.getElementById("description").textContent+"<br>";
+		document.getElementById("iFrame").contentWindow.document.getElementById("description").textContent.replace(/(?:\r\n|\r|\n)/g,"<br>")+"<br>";
+		document.getElementById("iFrame").contentWindow.document.getElementsByClassName("ytp-mute-button")[0].click();
 		if (x==0) {clearInterval(intervalVar); display();}
 		x--; i++;
-		iFrame.src=document.getElementsByTagName("ytd-grid-video-renderer")[x].childNodes[1].childNodes[0].childNodes[2].href;
-	} var intervalVar=setInterval(getTitlesAndDescriptions,5000);
+	} var intervalVar=setInterval(getTitlesAndDescriptions,dly*1000);
 	
 }
 
