@@ -1,7 +1,7 @@
 function scrollToLastVideo(){
 	if(document.getElementById("spinner")!=null) window.scrollTo(0,document.getElementsByTagName("ytd-app")[0].scrollHeight);
-	else getLinks();
-} setInterval(scrollToLastVideo,10);
+	else {clearInterval(intervalVar); getLinks();}
+} var intervalVar=setInterval(scrollToLastVideo,10);
 
 function getLinks() {
 	var str="", i=0; noVideos=document.getElementsByTagName("ytd-grid-video-renderer").length;
