@@ -16,7 +16,7 @@ function getLinks() {
 		"----------------------------------------<br>"+
 		document.getElementById("iFrame").contentWindow.document.getElementById("description").textContent.replace(/(?:\r\n|\r|\n)/g,"<br>")+"<br>";
 		document.getElementById("iFrame").contentWindow.document.getElementsByClassName("ytp-mute-button")[0].click();
-		if (x==noVideos-5) {clearInterval(intervalVar); display();}
+		if (x==0) {clearInterval(intervalVar); display();}
 		x--; i++;
 		iFrame.src=document.getElementsByTagName("ytd-grid-video-renderer")[x].childNodes[1].childNodes[0].childNodes[2].href;
 	} var intervalVar=setInterval(getTitlesAndDescriptions,dly*1000);
