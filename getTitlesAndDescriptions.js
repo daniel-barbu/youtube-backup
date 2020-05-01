@@ -9,13 +9,12 @@ function getLinks() {
 	var iFrame=document.createElement("iframe"); iFrame.id="iFrame"; document.body.appendChild(iFrame);
 	iFrame.src=document.getElementsByTagName("ytd-grid-video-renderer")[x].childNodes[1].childNodes[0].childNodes[2].href;
 	function getTitlesAndDescriptions() {
-		console.log("Finished video "+i+"/"+noVideos+". "+((noVideos-i)*dly/60).toFixed(0)+"min"+(((noVideos-i)*dly)-(((noVideos-i)*dly/60).toFixed(0))*60).toFixed(0)+"sec left");
 		str+="xxxxxxxxxxxxxxxxxxxxxxxxxxxxx"; for(var y=i.toString().length; y<noVideos.toString().length; y++) {str+="0"}; str+=i+"xxxxxxxxxxxxxxxxxxxxxxxxxxxxx|<br>"+
 		document.getElementById("iFrame").contentWindow.document.getElementsByTagName("h1")[0].textContent+"<br>"+
 		document.getElementById("iFrame").contentWindow.document.getElementsByClassName("view-count")[0].textContent+document.getElementById("iFrame").contentWindow.document.getElementById("date").textContent+"<br>"+
 		"----------------------------------------<br>"+
 		document.getElementById("iFrame").contentWindow.document.getElementById("description").textContent.replace(/(?:\r\n|\r|\n)/g,"<br>")+"<br>";
-		document.getElementById("iFrame").contentWindow.document.getElementsByClassName("ytp-mute-button")[0].click();
+		console.log("Finished video "+i+"/"+noVideos+". approx."+(noVideos-i)*dly*1.2+"sec left");
 		if (x==0) {clearInterval(intervalVar); display();}
 		x--; i++;
 		iFrame.src=document.getElementsByTagName("ytd-grid-video-renderer")[x].childNodes[1].childNodes[0].childNodes[2].href;
