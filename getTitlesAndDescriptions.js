@@ -14,7 +14,7 @@ function getLinks() {
 		document.getElementById("iFrame").contentWindow.document.getElementsByClassName("view-count")[0].textContent+document.getElementById("iFrame").contentWindow.document.getElementById("date").textContent+"<br>"+
 		"----------------------------------------<br>"+
 		document.getElementById("iFrame").contentWindow.document.getElementById("description").textContent.replace(/(?:\r\n|\r|\n)/g,"<br>")+"<br>";
-		console.log("Finished video "+i+"/"+noVideos+". approx."+(noVideos-i)*dly*1.2+"sec left");
+		console.log("Finished video "+i+"/"+noVideos+". ["+(noVideos-i)*dly*1.3+"sec left]");
 		if (x==0) {clearInterval(intervalVar); display();}
 		x--; i++;
 		iFrame.src=document.getElementsByTagName("ytd-grid-video-renderer")[x].childNodes[1].childNodes[0].childNodes[2].href;
