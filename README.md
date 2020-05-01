@@ -1,5 +1,7 @@
 # youtube-videosInfoBackup<sub>(chrome+firefox)</sub>
-youtube-videosInfoBackup is a Javascipt tool to backup youtube video links, titles and descriptions. 
+youtube-videosInfoBackup is a Javascipt tool to backup youtube video links, titles and descriptions.  
+`getLinks.js`: links  
+`getTitlesAndDescriptions.js`: title, view count, upload date and description
 
 ### How to use
 1. Open the [videos page](https://www.youtube.com/user/<USER>/videos) of an Youtube channel.
