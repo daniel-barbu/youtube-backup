@@ -11,4 +11,6 @@ youtube-videosInfoBackup is a Javascipt tool to backup youtube video links, titl
 1. Youtube shortens the links in descriptions automatically. (e.g. `https://www.example.com/blah/bl...`)
 
 ### Screenshot
-![screenshot.png not loaded correctly](/screenshot.png)
+|                        getLinks.js                        |                getTitlesAndDescriptions.js                |
+|:---------------------------------------------------------:|:---------------------------------------------------------:|
+| ![screenshot1.png not loaded correctly](/screenshot1.png) | ![screenshot2.png not loaded correctly](/screenshot2.png) |
